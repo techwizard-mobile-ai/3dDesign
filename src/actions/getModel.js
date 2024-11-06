@@ -11,7 +11,7 @@ const apiClient = axios.create({
 export const getModel = async (prompt) => {
     console.log('Sending request to server:', prompt);
     const payload = {
-        prompt: "panckakes",
+        prompt: prompt,
         score_threshold: 0,
         output_dir: "autoppia-react-app",
         source: "autoppia-3d"

@@ -85,7 +85,7 @@ const SampleModel = (props) => {
       />
       <MenuItem
         icon={windowIcon}
-        text="Library To 3D"
+        text="Library"
         action={() => {
           action(2);
         }}
@@ -93,7 +93,7 @@ const SampleModel = (props) => {
       />
       <MenuItem
         icon={clockIcon}
-        text="History Of the Result"
+        text="Generation History"
         action={() => {
           action(3);
         }}
