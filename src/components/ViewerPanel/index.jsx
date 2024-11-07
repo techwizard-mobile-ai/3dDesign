@@ -21,7 +21,7 @@ const ViewerPanel = (props) => {
         />
       )}
 
-      {!props.isLoading && props.modelPath == "" && (
+      {((!props.isLoading && props.modelPath == "") || activeMenu === 1) && (
         <AltText upload={activeMenu === 1} />
       )}
     </>
