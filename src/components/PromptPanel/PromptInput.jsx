@@ -78,7 +78,7 @@ const PromptInput = ({
 
       <button
         onClick={handleGenerate}
-        className="mt-[20px] md:mt-0 flex justify-center items-center bg-sky-500/95 md:bg-gray-700/60 rounded-b-full rounded-t-full md:rounded-t-none md:rounded-b-xl text-white font-bold py-2 px-4 md:w-full h-[60px]"
+        className="mt-[20px] md:mt-0 flex justify-center items-center bg-sky-500/95 md:bg-gray-700/60 md:hover:bg-gray-600/60 rounded-b-full rounded-t-full md:rounded-t-none md:rounded-b-xl text-white font-bold py-2 px-4 md:w-full h-[60px]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

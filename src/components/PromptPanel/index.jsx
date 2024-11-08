@@ -11,7 +11,7 @@ const PromptPanel = ({ prompt, setPrompt, handleGenerate, ...rest }) => {
         <div className="md:h-[60%] p-[20px]">
           <Logo className="w-full flex items-center" />
           <SampleModel
-            className="mt-[30px] md:mt-[90px] mx-5 flex justify-center items-center md:flex-col"
+            className="mt-[30px] md:mt-[20%] mx-5 flex justify-center items-center md:flex-col"
             action={action}
             activeMenu={activeMenu}
           />
