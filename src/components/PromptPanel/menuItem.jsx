@@ -15,12 +15,12 @@ export default function MenuItem(props) {
   return (
     <div
       onClick={() => action()}
-      className={`px-[20px] flex flex-start text-white font-bold w-full p-[10px] rounded-[5px]  hover:bg-gray-700/30  cursor-pointer box-border my-[5px] ${
+      className={`px-[20px] flex justify-center md:justify-start text-white font-bold w-full p-[10px] rounded-[5px]  hover:bg-gray-700/30  cursor-pointer box-border my-[5px] ${
         active ? "bg-gray-700/30" : ""
       }`}
     >
       {icon}
-      <div className="ml-[5px] text-white">{text}</div>
+      <div className="hidden md:block ml-[5px] text-white">{text}</div>
     </div>
   );
 }

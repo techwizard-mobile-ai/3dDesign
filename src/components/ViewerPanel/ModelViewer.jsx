@@ -22,7 +22,7 @@ const LoadingSpinner = () => (
 
 export const ModelViewer = ({ isLoading, modelPath }) => {
   return (
-    <div className="bg-[radial-gradient(#37373b_1px,#1D1F1C00_1px)] bg-[size:20px_20px] rounded-xl shadow-sm overflow-hidden h-full w-full min-h-[600px] relative">
+    <div className="bg-[radial-gradient(#37373b_1px,#1D1F1C00_1px)] bg-[size:20px_20px] rounded-xl shadow-sm overflow-hidden h-full md:h-full w-full  relative">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 50 }}
         className="w-full h-full "

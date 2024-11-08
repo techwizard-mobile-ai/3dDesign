@@ -6,15 +6,15 @@ const AltText = (props) => {
     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
       {!upload ? (
         <h1
-          className="text-white font-bold text-center text-[50px] z-50"
+          className="text-white font-bold text-center text-[25px] md:text-[50px] z-50"
           style={{ textShadow: "2px 2px 4px black" }}
         >
           No 3D Model
         </h1>
       ) : (
-        <div className="w-full h-full ">
+        <div className="w-full h-full bg-[#18181b] rounded-lg">
           <label
-            className="w-full h-full flex flex-col items-center justify-center text-white text-[50px] cursor-pointer"
+            className="w-full h-full flex flex-col items-center justify-center text-white text-[25px] md:text-[50px] cursor-pointer bg-[radial-gradient(#37373b_1px,#1D1F1C00_1px)] bg-[size:20px_20px] rounded-lg"
             htmlFor="upload_image"
           >
             <svg
@@ -23,7 +23,7 @@ const AltText = (props) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-[6rem] w-[6rem]"
+              className="h-[3rem] w-[3rem] md:h-[6rem] md:w-[6rem]"
             >
               <path
                 strokeLinecap="round"

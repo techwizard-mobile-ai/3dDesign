@@ -50,7 +50,7 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="flex h-screen ">
+    <div className="flex h-screen">
       <PromptPanel
         prompt={prompt}
         setPrompt={setPrompt}
@@ -58,7 +58,7 @@ const MainLayout = () => {
         action={(value) => handleClickMenu(value)}
         activeMenu={activeMenu}
       />
-      <div className="flex-1 relative">
+      <div className=" md:flex-1 md:relative">
         <ViewerPanel
           handleDownload={handleDownload}
           prompt={prompt}

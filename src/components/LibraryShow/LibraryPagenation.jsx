@@ -2,7 +2,7 @@ import React from "react";
 
 const LibraryPagenation = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="hidden md:block flex flex-col items-center">
       <div className="inline-flex mt-2 xs:mt-0 items-center">
         <button className="border-gray-600/40 border-2 flex items-center justify-center w-10 h-10 text-base font-medium rounded-full bg-gray-800/50 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white">
           <svg

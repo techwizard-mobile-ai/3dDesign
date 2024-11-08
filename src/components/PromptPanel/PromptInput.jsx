@@ -1,25 +1,38 @@
 import React from "react";
 import HistoryItem from "./HistoryItem";
 
-const PromptInput = ({ className, activeMenu, action, onClickHistoryMenu, setPrompt, handleGenerate }) => {
+const PromptInput = ({
+  className,
+  activeMenu,
+  action,
+  onClickHistoryMenu,
+  setPrompt,
+  handleGenerate,
+}) => {
   return (
     <div className={className}>
-      <div className="mt-8">
+      <div className="md:mt-8">
         <p className="text-white">Describe a 3D object</p>
         <textarea
           placeholder="Enter your prompt here ..."
           onChange={(e) => setPrompt(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.code === "Enter") {
+              e.preventDefault();
+              handleGenerate();
+            }
+          }}
           rows={2}
-          className="border rounded p-2 bg-[#ffffff11] text-white border-[#ffffff33] w-[230px] mt-5"
+          className="border rounded p-3 bg-[#ffffff11] text-white border-[#ffffff33] w-[260px] mt-5 resize-none"
         />
       </div>
 
       <div
         className={`${
-          activeMenu === 3 ? "h-[215%]" : "h-0"
-        } overflow-hidden transition-all duration-500 z-[100] absolute bottom-0 flex justify-center items-center bg-[#18181b] rounded-b-xl text-white font-bold px-11 w-full`}
+          activeMenu === 3 ? "h-[calc(100%-140px)] md:h-[207%]" : "h-0"
+        } overflow-hidden transition-all duration-500 z-[100] absolute bottom-[30px] md:bottom-0 flex justify-center items-center bg-[#18181b] rounded-b-xl text-white font-bold px-11 w-[calc(100%-60px)] md:w-full`}
       >
-        <div className="m-2 h-full w-full relative pt-5 overflow-y-auto overflow-x-hidden">
+        <div className="m-2 h-full w-full relative pt-5 overflow-y-auto overflow-x-hidden flex flex-col items-start">
           <div className="flex items-center justify-start mb-4">
             <div
               className="flex group cursor-pointer text-gray-300"
@@ -65,7 +78,7 @@ const PromptInput = ({ className, activeMenu, action, onClickHistoryMenu, setPro
 
       <button
         onClick={handleGenerate}
-        className="flex justify-center items-center bg-gray-700/60 rounded-b-xl text-white font-bold py-2 px-4 w-full h-[60px]"
+        className="mt-[20px] md:mt-0 flex justify-center items-center bg-sky-500/95 md:bg-gray-700/60 rounded-b-full rounded-t-full md:rounded-t-none md:rounded-b-xl text-white font-bold py-2 px-4 md:w-full h-[60px]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
