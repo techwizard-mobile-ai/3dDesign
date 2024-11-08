@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HistoryItem from "./HistoryItem";
 
 const PromptInput = ({
@@ -8,7 +8,13 @@ const PromptInput = ({
   onClickHistoryMenu,
   setPrompt,
   handleGenerate,
+  selectModel,
 }) => {
+  const [histories, setHistories] = useState([]);
+
+  useEffect(() => {
+    setHistories(JSON.parse(localStorage.getItem("histories")) || []);
+  }, [activeMenu]);
   return (
     <div className={className}>
       <div className="md:mt-8">
@@ -70,9 +76,18 @@ const PromptInput = ({
             <div className="ml-5 text-[25px] text-gray-300">History</div>
           </div>
 
-          {[...Array(10)].map((_, index) => (
-            <HistoryItem key={index} />
-          ))}
+          {histories?.length > 0 ? (
+            histories.map((item, index) => (
+              <HistoryItem
+                key={index}
+                item={item}
+                onclick={selectModel}
+                closeHistories={() => action(0)}
+              />
+            ))
+          ) : (
+            <div className="w-full flex justify-center">No Histories</div>
+          )}
         </div>
       </div>
 

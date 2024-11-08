@@ -20,8 +20,19 @@ const MainLayout = () => {
       isLoading: true,
     });
     try {
-      let modelURL = await getModel(prompt);
-      console.log(modelURL);
+      let modelURL;
+      let histories = JSON.parse(localStorage.getItem("histories")) || [];
+      localStorage.setItem(
+        "histories",
+        JSON.stringify([
+          ...histories,
+          {
+            prompt: prompt,
+            modelURL: modelURL,
+          },
+        ])
+      );
+      modelURL = await getModel(prompt);
       if (modelURL) {
         setGenerationState({
           ...generationState,
@@ -56,6 +67,7 @@ const MainLayout = () => {
         setPrompt={setPrompt}
         handleGenerate={handleGenerate}
         action={(value) => handleClickMenu(value)}
+        selectModel={setGenerationState}
         activeMenu={activeMenu}
       />
       <div className=" md:flex-1 md:relative">

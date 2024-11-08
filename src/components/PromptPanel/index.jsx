@@ -4,7 +4,7 @@ import PromptInput from "./PromptInput";
 import Logo from "./Logo";
 
 const PromptPanel = ({ prompt, setPrompt, handleGenerate, ...rest }) => {
-  const { action, activeMenu } = rest;
+  const { action, activeMenu, selectModel } = rest;
   return (
     <div className="w-full md:w-[400px] p-[30px] h-full shadow-xl">
       <div className="h-full w-full rounded-xl bg-zinc-900 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.1)] ">
@@ -24,6 +24,7 @@ const PromptPanel = ({ prompt, setPrompt, handleGenerate, ...rest }) => {
             handleGenerate={handleGenerate}
             action={action}
             activeMenu={activeMenu}
+            selectModel={selectModel}
           />
         </div>
       </div>
